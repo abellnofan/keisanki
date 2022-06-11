@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Kidoukeisan</title>
+
+  </head>
+  <body>
+    <h1 class="title">刀剣乱舞機動計算サイト</h1>
+    <p>このサイトでは刀剣乱舞-ONLINEのキャラクターの機動力を自動計算するサイトです。</p>
+    <p>指定された指示通りに入力すると計算することができます。半角数字で入力してください。</p>
+    <p>まだ開発テスト中です。今後新たな機能を実装していくつもりです。</p>
+      <form oninput="zi.value = (Number(k.value) + Number(u.value) * Number(s.value)) * (Number(r.value) * Number(m.value) + 1) * Number(t.value) * Number(z.value)">
+          刀剣男子と刀装の機動合計値(※馬の機動は除く)<br>
+          <input type="number" name="k" id="k" value="0" size="5">
+          <br>
+          馬の機動値
+          <br>
+          <input type="number" name="u" id="u" value="0" size="5">
+          <br>
+          戦場を選択してください。<br>
+          <select name="s" id="s">
+              <option type="number" value="1">野戦</option>
+              <option type="number" value="0.5">市街戦</option>
+              <option type="number" value="0">夜戦</option>
+          </select>
+          <br>
+          レベルを選択してください<br>
+          <input type="number" name="r" id="r" value="0" size="5">
+          <br>
+          MAPを選択してください<br>
+          <select name="m" id="m">
+            <option type="number" value="0.04">1~6面・検非違使戦・演練・各種イベントMAP</option>
+            <option type="number" value="0.02">検非違使戦を除く、7面8面</option>
+          </select>
+          <br>
+          疲労度を選択してください<br>
+          <select name="t" id="t">
+            <option type="number" value="1.2">無印・特　好調(桜)</option>
+            <option type="number" value="1">無印・特 通常</option>
+            <option type="number" value="0.8">無印・特 疲労(オレンジ)</option>
+            <option type="number" value="0.6">無印・特 疲労(赤)</option>
+            <option type="number" value="1.2">極 好調(桜)</option>
+            <option type="number" value="1">極 通常</option>
+            <option type="number" value="0.7">極 疲労(オレンジ)</option>
+            <option type="number" value="0.5">極 疲労(赤)</option>
+          </select>
+          <br>
+          陣形を選択してください<br>
+          <select name="z" id="z">
+            <option type="number" value="1">魚鱗陣</option>
+            <option type="number" value="0.9">鶴翼陣</option>
+            <option type="number" value="1">横隊陣</option>
+            <option type="number" value="0.9">方陣</option>
+            <option type="number" value="1.1">雁行陣</option>
+            <option type="number" value="1.2">逆行陣</option>
+          </select>
+          <br>
+          実行値(小数点以下は切り捨てです。)<br>
+          <output name="zi" for="k u r s m t z">0</output>
+      </form>
+  </body>
+</html>
